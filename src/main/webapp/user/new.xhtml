@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+		<title>Fun.To.Us</title>
+		
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"/>
+		<script src="#{facesContext.externalContext.requestContextPath}/js/bootstrap.min.js"/>
+		<script src="#{facesContext.externalContext.requestContextPath}/js/jquery-scrolltofixed.js"/>
+		<script src="#{facesContext.externalContext.requestContextPath}/js/scripts.js"/>
+		
+		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/bootstrap.min.css" media="screen"/>
+	</h:head>  
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3"/>
+			<div class="span6"/>
+			<div class="span3"/>
+		</div>
+		<div class="row-fluid">
+			<div class="span3"/>
+			<div class="span6">
+				<h:form class="form-horizontal">
+					<div class="control-group">
+						<h:outputLabel value="Nome" for="name" class="control-label"/>
+						<div class="controls">
+							<h:inputText value="#{createUserBean.user.name}" id="name"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<h:outputLabel value="Nickname" for="nickname" class="control-label"/>
+						<div class="controls">
+							<h:inputText value="#{createUserBean.user.nickname}" id="nickname"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<h:outputLabel value="Password" for="password" class="control-label"/>
+						<div class="controls">
+							<h:inputSecret value="#{createUserBean.user.password}" id="password"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<h:outputLabel value="Email" for="email" class="control-label"/>
+						<div class="controls">
+							<h:inputText value="#{createUserBean.user.email}" id="email"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							<h:commandButton value="Salvar" action="#{createUserBean.save}" class="btn btn-primary"/>
+						</div>
+					</div>
+				</h:form>
+			</div>
+			<div class="span3"/>
+		</div>
+	</div>
+</body> 
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body>
+	<ui:repeat var="media" value="#{homeBean.partialMedias}" class="table table-striped">
+		<div id="posts">
+			<h:graphicImage value="/imageProcessor?id=#{media.id}" height="200" width="300"/>
+		</div>
+	</ui:repeat>
+	<div id="loadmore" style="display: none;">
+			<center><h:graphicImage value="/img/ajax-loader.gif"/></center>
+	</div>
+</body> 
+</html>

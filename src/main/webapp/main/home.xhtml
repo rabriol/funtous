@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+	<h:head>
+		<title>Fun.To.Us</title>
+		
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"/>
+		<script src="#{facesContext.externalContext.requestContextPath}/js/bootstrap.min.js"/>
+		<script src="#{facesContext.externalContext.requestContextPath}/js/jquery-scrolltofixed.js"/>
+		<script src="#{facesContext.externalContext.requestContextPath}/js/scripts.js"/>
+		
+		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/bootstrap.min.css" media="screen"/>
+	</h:head> 
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".subnav-collapse">
+						<a class="brand" href="#">Fun.To.Us</a>
+					</a>
+					<div class="nav-collapse subnav-collapse">
+						<ul class="nav">
+							<li>
+								<a href="#">
+									<i class="icon-home icon-white"/>
+									Home
+								</a>
+							</li>
+							<li>
+								<a href="#">Filtrar</a>
+							</li>
+						</ul>
+					</div>
+					<h:form class="navbar-search pull-right">
+						<h:inputText value="#{homeBean.searchTerm}" class="search-query span2"/>
+					</h:form>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+	  		<div class="row-fluid">
+	  			<div class="span2"/>
+	  			<div class="span2">
+	  				<div class="well sidebar-nav">
+	  					<h:dataTable value="#{homeBean.users}" var="user">
+		  					<h:column>
+		  						<h:outputText value="#{user.nickname}"/>
+		  					</h:column>
+	  					</h:dataTable>
+	  				</div>
+	  			</div>
+	  			<div class="span6">
+					<ui:include src="/posts.xhtml"/>
+				</div>
+				<div class="span2"/>
+			</div>
+		</div>
+	</body> 
+</html>

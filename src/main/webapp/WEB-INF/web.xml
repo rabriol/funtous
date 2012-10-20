@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>funtous</display-name>
+  <welcome-file-list>
+    <welcome-file>login.xhtml</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+  <persistence-unit-ref>
+    <persistence-unit-ref-name>persistence/fun_to_us</persistence-unit-ref-name>
+    <persistence-unit-name>fun_to_us</persistence-unit-name>
+  </persistence-unit-ref>
+  <servlet>
+    <description></description>
+    <servlet-name>receiver</servlet-name>
+    <servlet-class>br.com.funtous.api.MediaReceiverServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>receiver</servlet-name>
+    <url-pattern>/receiver</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ImageProcessor</display-name>
+    <servlet-name>ImageProcessor</servlet-name>
+    <servlet-class>br.com.funtous.api.ImageProcessor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageProcessor</servlet-name>
+    <url-pattern>/imageProcessor</url-pattern>
+  </servlet-mapping>
+</web-app>

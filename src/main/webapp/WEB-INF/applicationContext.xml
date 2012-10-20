@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- enables spring`s annotations feature -->
+	<context:annotation-config/>
+	
+	<!-- show to spring where search the beans -->
+	<context:component-scan base-package="br.com.funtous.daos, br.com.funtous.services"/>
+	
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+    	<property name="transactionManagerName" value="java:/TransactionManager"/>
+	</bean>
+	
+	<!-- indicate the transaction will be annotated -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	
+	<jee:jndi-lookup id="spring_fun_to_us" jndi-name="persistence/fun_to_us"></jee:jndi-lookup>
+	
+	<!--bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean-->
+</beans>

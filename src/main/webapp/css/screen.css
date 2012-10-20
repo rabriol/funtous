@@ -1,0 +1,97 @@
+/* CSS Document */
+@charset "UTF-8"
+
+/* ----------->>>GLOBAL<<<------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+fieldset,img { 
+	border:0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+
+ol,ul {
+	list-style:none;
+}
+
+caption,th {
+	text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+
+q:before,q:after {
+	content:'';
+}
+
+abbr,acronym { 
+	border:0;
+}
+
+body {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+<!-- home page -->
+#containertopo {
+	width:100%;
+	height:100px;	
+}
+
+#topo {
+	height:100px;
+	background-color:#09F;	
+}
+
+#containermain {
+	width:1000px;
+	height:800px;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;	
+}
+
+#navbar {
+	float:left;
+	height:800px;
+	width:30%;
+	background-color:#CCC;	
+}
+
+#conteudo {
+	float:right;
+	height:800px;
+	width:70%;
+	background-color:#666;	
+}
+
+#containerrodape {
+	width:100%;
+	height:100px;
+}
+
+#rodape {
+	background-color:#09F;
+	height:100px;
+	clear:both;	
+}
